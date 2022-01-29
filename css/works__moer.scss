@@ -16,6 +16,13 @@ $media-tb: 600px;
 
 body {
   margin: 0 auto;
+  p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+  .warp {
+  padding: 0 2.133vw;
+  }
 }
 .c-top__btn {
   content: "";

@@ -13,11 +13,14 @@ $media-tb: 600px;
   }
 }
 /*==========ここまでメディアクエリ==========*/
-
 body {
   margin: 0 auto;
   p {
-  text-align: start;
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+  .warp {
+  padding: 0 2.133vw;
   }
 }
 
@@ -89,11 +92,11 @@ body {
     }
 
     30% {
-      background-color: rgba(74, 202, 196, 0.2);
+      background-color: rgba(80, 199, 193, 0.1);
     }
 
     60% {
-      background-color: rgb(159, 209, 255 , 0.3);
+      background-color: rgba(170, 206, 240, 0.2);
     }
 
     100% {
