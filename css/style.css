@@ -432,6 +432,7 @@ body .warp {
   }
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~section__title~~~~~~~~~~~~~~~~~~~~~~*/
 .c-section__title {
   margin: 0 auto 16.2vw;
 }
@@ -441,11 +442,46 @@ body .warp {
   }
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~/section__title~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~c-button~~~~~~~~~~~~~~~~~~~~~~*/
+/*-----c-button(全ページ共通)-----*/
+.c-button {
+  text-align: center;
+  margin: 0 auto;
+}
 .c-button .c-button__inner {
   position: relative;
   display: inline-block;
   border: #323232 1px solid;
   border-radius: 6px;
+  width: 100%;
+}
+@media only screen and (min-width: 1025px) {
+  .c-button .c-button__inner {
+    width: auto;
+  }
+}
+.c-button .c-button__inner::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.c-button .c-button__inner:hover {
+  border-color: #9fd1ff;
+  color: #fff;
+}
+.c-button .c-button__inner:hover::after {
+  width: 100%;
+  background-color: #9fd1ff;
+  transition: all 0.4s;
+}
+.c-button .c-button__inner:hover::before {
+  border-color: #fff;
 }
 .c-button :before {
   content: "";
@@ -460,30 +496,13 @@ body .warp {
   margin-top: -5px;
 }
 
-.c-button {
-  text-align: center;
-  margin: 0 auto;
-}
-.c-button a {
-  width: 100%;
-}
-@media only screen and (min-width: 1025px) {
-  .c-button a {
-    width: auto;
-  }
-}
-
+/*-----c-button(各ページ)-----*/
 .p-works__link-btn a {
   padding: 4% 33%;
 }
-@media only screen and (min-width: 1025px) {
-  .p-works__link-btn a {
-    width: auto;
-  }
-}
 
 .p-contact__link-btn a {
-  padding: 5% 16%;
+  padding: 5% 10%;
 }
 @media only screen and (min-width: 600px) {
   .p-contact__link-btn a {
@@ -496,33 +515,8 @@ body .warp {
   }
 }
 
-.c-button__inner:hover {
-  border-color: #9fd1ff;
-  color: #fff;
-}
-
-.c-button__inner::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
-  transition: all 0.3s;
-}
-
-.c-button__inner:hover::after {
-  width: 100%;
-  background-color: #9fd1ff;
-  transition: all 0.4s;
-}
-
-.c-button__inner:hover:before {
-  border-color: #fff;
-}
-
-/*/============================section(共通)=============================*/
+/*~~~~~~~~~~~~~~~~~~~~~~/c-button~~~~~~~~~~~~~~~~~~~~~~*/
+/*============================/section(共通)=============================*/
 /*============================mainvisual=============================*/
 .l-main__mv {
   width: 100%;
@@ -586,6 +580,8 @@ body .warp {
 .l-main__mv .p-mv__inner .p-mv__img span:nth-child(2) {
   top: 50%;
   border-radius: 36% 64% 56% 44%/53% 45% 55% 47%;
+  -webkit-animation-delay: all 3s;
+          animation-delay: all 3s;
 }
 @-webkit-keyframes mv__logo {
   0% {
@@ -874,6 +870,14 @@ body .warp {
   /*l-works__item*/
   /*p-works__item-02*/
 }
+#works .c-section__inner {
+  padding-top: 45vw;
+}
+@media only screen and (min-width: 600px) {
+  #works .c-section__inner {
+    padding-top: 0;
+  }
+}
 @media only screen and (min-width: 1025px) {
   #works .l-works__item {
     display: flex;
@@ -881,7 +885,12 @@ body .warp {
   }
 }
 #works .p-works__item-02 {
-  margin-top: 9.6632vw;
+  margin-top: 14.4vw;
+}
+@media only screen and (min-width: 1025px) {
+  #works .p-works__item-02 {
+    margin-top: 0;
+  }
 }
 #works .p-works__item-02 .p-works__item_text {
   text-align: center;
@@ -994,6 +1003,14 @@ body .warp {
 }
 
 /*============================contact=============================*/
+#contact .c-section__inner {
+  padding-top: 45vw;
+}
+@media only screen and (min-width: 600px) {
+  #contact .c-section__inner {
+    padding: 0%;
+  }
+}
 #contact .c-section__inner .contact__item {
   padding-bottom: 37.33vw;
 }
@@ -1075,7 +1092,7 @@ body::before {
 
 /*============================ここまで背景、画像=============================*/
 /*============================フォントサイズ　フォントファミリー=============================*/
-/*font-size(全ページ)*/
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(全ページ)~~~~~~~~~~~~~~~~~~~~~~*/
 body {
   font-family: "Martel", "Noto Serif JP", serif;
   /*footer*/
@@ -1115,7 +1132,7 @@ body .c-nav__link {
 body .c-button a {
   font-size: clamp(1.6rem , 3.2vw , 2.4rem);
   font-weight: 200;
-  letter-spacing: clamp(1rem , 0.4vw , 1.2rem);
+  letter-spacing: clamp(0.6rem , 0.4vw , 1.2rem);
 }
 @media only screen and (min-width: 1025px) {
   body .c-button a {
@@ -1129,85 +1146,91 @@ body #footer p {
   color: #fff;
 }
 
-/*-----------mainvisual font-----------*/
-.p-mv__title {
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(各ページ)~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+  /*-----mv-----*/
+  /*-----/mv-----*/
+  /*-----section__title-----*/
+  /*-----/section__title-----*/
+  /*-----about-----*/
+  /*-----/about-----*/
+  /*-----------skill-----------*/
+  /*-----------/skill-----------*/
+  /*-----------works-----------*/
+  /*-----------/works-----------*/
+  /*-----------contact-----------*/
+  /*-----------/contact-----------*/
+}
+body .p-mv__title {
   color: #323232;
   font-weight: 200;
 }
-
-.p-mv__text {
+body .p-mv__text {
   display: inline-block;
   letter-spacing: 1.06vw;
 }
-
-.p-mv__text-01 {
+body .p-mv__text-01 {
   /*fontsize (1.8rem基準)*/
   font-size: clamp(1.4rem , 4.8vw , 2.2rem);
 }
 @media only screen and (min-width: 600px) {
-  .p-mv__text-01 {
+  body .p-mv__text-01 {
     font-size: clamp(2.4rem, 4.68vw , 3.8rem);
   }
 }
 @media only screen and (min-width: 1025px) {
-  .p-mv__text-01 {
+  body .p-mv__text-01 {
     /*fontsize (2.8rem基準)*/
     font-size: 2.04vw;
   }
 }
-
-.p-mv__text-02 {
+body .p-mv__text-02 {
   /*fontsize (5.4rem基準)*/
   font-size: clamp(5rem , 14.4vw , 5.8rem);
   letter-spacing: 1.6vw;
   font-weight: 200;
 }
 @media only screen and (min-width: 600px) {
-  .p-mv__text-02 {
+  body .p-mv__text-02 {
     font-size: clamp(8rem, 11.45vw , 9rem);
   }
 }
 @media only screen and (min-width: 1025px) {
-  .p-mv__text-02 {
+  body .p-mv__text-02 {
     /*fontsize (8rem基準)*/
     font-size: 5.85vw;
   }
 }
-
-.p-mv__text-03 {
+body .p-mv__text-03 {
   /*fontsize (2.8rem基準)*/
   font-size: clamp(2.4rem , 7.46vw , 3.2rem);
 }
 @media only screen and (min-width: 600px) {
-  .p-mv__text-03 {
+  body .p-mv__text-03 {
     font-size: clamp(2.4rem, 4.68vw , 3.8rem);
   }
 }
 @media only screen and (min-width: 1025px) {
-  .p-mv__text-03 {
+  body .p-mv__text-03 {
     font-size: 2.04vw;
   }
 }
-
-.p-mv__text-04 {
+body .p-mv__text-04 {
   /*fontsize (1.8rem基準)*/
   font-size: clamp(1.4rem , 4.8vw , 2.2rem);
 }
 @media only screen and (min-width: 600px) {
-  .p-mv__text-04 {
+  body .p-mv__text-04 {
     font-size: clamp(2rem , 4.719vw , 3.4rem);
   }
 }
 @media only screen and (min-width: 1025px) {
-  .p-mv__text-04 {
+  body .p-mv__text-04 {
     /*fontsize (2.6rem基準)*/
     font-size: 1.9vw;
   }
 }
-
-/*-----------/mainvisual font-----------*/
-/*-----------sectiontitle font-----------*/
-.c-section__title {
+body .c-section__title {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -1217,16 +1240,16 @@ body #footer p {
   width: 100%;
 }
 @media only screen and (min-width: 600px) {
-  .c-section__title {
+  body .c-section__title {
     width: 70.3vw;
   }
 }
 @media only screen and (min-width: 1025px) {
-  .c-section__title {
+  body .c-section__title {
     width: 43.19vw;
   }
 }
-.c-section__title::after {
+body .c-section__title::after {
   content: "";
   display: block;
   margin-left: 16px;
@@ -1236,16 +1259,16 @@ body #footer p {
   background-color: #323232;
 }
 @media only screen and (min-width: 600px) {
-  .c-section__title::after {
+  body .c-section__title::after {
     width: 20.833vw;
   }
 }
 @media only screen and (min-width: 1025px) {
-  .c-section__title::after {
+  body .c-section__title::after {
     width: 11.71vw;
   }
 }
-.c-section__title::before {
+body .c-section__title::before {
   content: "";
   display: block;
   display: block;
@@ -1256,32 +1279,29 @@ body #footer p {
   background-color: #323232;
 }
 @media only screen and (min-width: 1025px) {
-  .c-section__title::before {
+  body .c-section__title::before {
     width: 11.713vw;
   }
 }
-
-.c-section__title-sub {
+body .c-section__title-sub {
   font-family: "Italianno", cursive;
 }
-
-.c-section__title-sub {
+body .c-section__title-sub {
   font-size: clamp(9rem , 20vw , 30rem);
   color: rgba(159, 209, 255, 0.7);
 }
 @media only screen and (min-width: 600px) {
-  .c-section__title-sub {
+  body .c-section__title-sub {
     font-size: clamp( 11.6rem , 17.699vw , 12.4rem);
   }
 }
 @media only screen and (min-width: 1025px) {
-  .c-section__title-sub {
+  body .c-section__title-sub {
     font-size: 8.784vw;
     font-size: clamp(11.6rem , 8.784vw , 13rem);
   }
 }
-
-.c-section__title-main {
+body .c-section__title-main {
   color: #000;
   position: absolute;
   top: 50%;
@@ -1291,80 +1311,68 @@ body #footer p {
   width: 100%;
 }
 @media only screen and (min-width: 600px) {
-  .c-section__title-main {
+  body .c-section__title-main {
     font-size: clamp(3.2rem , 44.719vw , 3.6rem);
   }
 }
-
-/*-----------/sectiontitle font-----------*/
-/*-----------about font-----------*/
-.p-about__text .p-about__text-01 {
+body .p-about__text .p-about__text-01 {
   color: black;
 }
-.p-about__text .p-about__text-01 p {
+body .p-about__text .p-about__text-01 p {
   text-align: start;
   font-size: clamp(2.2rem , 6.4vw , 4rem);
 }
 @media only screen and (min-width: 1025px) {
-  .p-about__text .p-about__text-01 p {
+  body .p-about__text .p-about__text-01 p {
     font-size: 2.04vw;
   }
 }
-.p-about__text .p-about__text-01 p span {
+body .p-about__text .p-about__text-01 p span {
   font-size: clamp(1.4rem , 4.266vw , 2.6rem );
   color: #707070;
 }
 @media only screen and (min-width: 1025px) {
-  .p-about__text .p-about__text-01 p span {
+  body .p-about__text .p-about__text-01 p span {
     font-size: 1.171vw;
   }
 }
-.p-about__text .p-about__genre {
+body .p-about__text .p-about__genre {
   font-size: clamp(1.6rem , 3.539vw , 2.4rem);
   color: #000;
   font-weight: 400;
 }
 @media only screen and (min-width: 1025px) {
-  .p-about__text .p-about__genre {
+  body .p-about__text .p-about__genre {
     font-size: clamp(1.6rem , 1.317vw , 2rem);
   }
 }
-
-/*-----------skill-----------*/
-h4 {
+body h4 {
   font-size: clamp(2.2rem , 5vw , 3.2rem);
 }
 @media only screen and (min-width: 1025px) {
-  h4 {
+  body h4 {
     font-size: clamp(2rem , 1.90vw , 2.6rem);
   }
 }
-
-/*-----------/skill-----------*/
-/*-----------works-----------*/
-.p-works__item_text {
+body .p-works__item_text {
   /*fontsize (1.6rem基準)*/
   font-size: clamp(1.2rem , 4.266vw , 2rem);
 }
 @media only screen and (min-width: 1025px) {
-  .p-works__item_text {
+  body .p-works__item_text {
     font-size: clamp(2.4rem , 1.75vw , 2.4rem);
   }
 }
-
-/*-----------/works-----------*/
-/*-----------contact-----------*/
-.p-contact__item-text p {
+body .p-contact__item-text p {
   /*fontsize (1.6rem基準)*/
   font-size: clamp(1.2rem , 4.266vw , 2rem);
 }
 @media only screen and (min-width: 1025px) {
-  .p-contact__item-text p {
+  body .p-contact__item-text p {
     font-size: clamp(1.6rem , 1.75vw , 2.6rem);
   }
 }
 
-/*-----------/contact-----------*/
 /*============================js=============================*/
 .js-clear {
   opacity: 0;

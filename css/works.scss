@@ -180,7 +180,7 @@ body {
     width: 80px;
   }
 }
-  /*~~~~~~~~~~~~~~~~~~~~~~ハンバーガーボタン~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~ハンバーガーボタン~~~~~~~~~~~~~~~~~~~~~~*/
 .l-hamubtn {
   display: block;
   width: 60px;
@@ -647,7 +647,7 @@ body {
 }
 /*============================/footer=============================*/
 
-/*============================背景、画像(全ページ共通)=============================*/
+/*============================背景、画像=============================*/
 .t-body {
   background-color: rgb(255, 252, 244);
 }
@@ -675,13 +675,11 @@ body::before {
       background-color: #fff;
   }
 }
-
-
 /*============================ここまで背景、画像=============================*/
 /*============================フォントサイズ　フォントファミリー=============================*/
 @import url('https://fonts.googleapis.com/css2?family=Italianno&family=Martel:wght@200;300&family=Noto+Serif+JP:wght@200;300;500&display=swap');
 
-/*font-size(全ページ)*/
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(全ページ)~~~~~~~~~~~~~~~~~~~~~~*/
 body {
   font-family:'Martel',  'Noto Serif JP',  serif;
     
@@ -732,7 +730,7 @@ body {
     }
   }
 }
-/*font-size(各ページ)*/
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(各ページ)~~~~~~~~~~~~~~~~~~~~~~*/
 body {
     /*mv*/
   .p-mv__item-text{
@@ -802,7 +800,6 @@ body {
   opacity: 1;
   transform: translate(0,0);
 }
-
 .js-line {
   @include pc{
     width: 0%;
@@ -810,7 +807,6 @@ body {
   }
   transition: all 1.8s;
 }
-
 .js-scroll__line {
   @include pc {
     width: 70%;
