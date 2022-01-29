@@ -124,14 +124,17 @@ body {
     transform: translate(-50% ,-50%);
   }
   h2 {
-    font-size: 3.2rem;
-    animation: load 4s linear infinite;
+    font-size: 2rem;
+    @include pc{
+      font-size: 3.2rem;
+    }
+    animation: load 2s linear infinite;
     color: #323232;
   }
   @keyframes load {
     50% {
       opacity: .4;
-      transform: translateY(-8px);
+      transform: translateY(-4px);
     }
 
     80% {
