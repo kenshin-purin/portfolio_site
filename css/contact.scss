@@ -390,10 +390,11 @@ body {
 
 /*============================mv=============================*/
 #mv {
-  margin-bottom: 160px;
+  margin-bottom:60px ;
   height: 117.33vw;
   @include pc {
     height: 35.23vw;
+    margin-bottom: 160px;
   }
     .p-mv__item {
         position: relative;
@@ -436,8 +437,12 @@ body {
   width: 80vw;
   height: 1100px;
   overflow-y: scroll;
-  margin: 0 auto;
+  margin: 0 auto 160px;
+  @include pc{
+    margin-bottom: 160px;
+  }
   iframe {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
