@@ -1,0 +1,818 @@
+@charset"UFT-8";
+/*==========メディアクエリ==========*/
+$media-pc: 1025px;
+$media-tb: 600px;
+@mixin pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;  
+  }
+}
+@mixin tb {
+  @media only screen and (min-width: $media-tb ) {
+    @content;  
+  }
+}
+/*==========ここまでメディアクエリ==========*/
+body {
+  margin: 0 auto;
+  p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+  .warp {
+  padding: 0 2.133vw;
+  }
+}
+
+.c-top__btn {
+  content: "";
+  position: fixed;
+  bottom: -100px;
+  right: 8px;
+  z-index: 9;
+  width: 60px;
+  height: 60px;
+
+  @include tb{
+    right: 40px;
+    width: 80px;
+    height: 80px;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/top__btn.png);
+    background-position: center;
+    background-size: 100%;
+  }
+  & a:hover {
+    background-image: url(../img/top__btn-hover.png);
+    animation: top-btn 1s linear infinite; 
+    transition: all .3s;
+  }
+  @keyframes top-btn {
+    50% {
+      transform: translateY(-10px);
+    }
+    
+  }
+
+}
+
+
+/*円の共通*/
+.c-circle{
+  span {
+    display: block;
+    position: absolute;
+    content: "";
+    /*各要素の親で円のサイズを指定する*/
+    width: 100%;
+    height: 100%;
+    border: 2px solid #9FD1FF;
+    animation: circle 10s linear infinite;
+  }
+  :nth-child(1) {
+    border-radius:50% 50% 45% 55% / 56% 47% 53% 44%   ;
+  }
+  :nth-child(2) {
+    animation-direction: reverse;
+    border-radius:46% 54% 39% 61% / 61% 39% 61% 39%  ;
+  }
+  :nth-child(3) {
+    animation-delay: 1s;
+    border-radius: 46% 54% 39% 61% / 61% 39% 61% 39% ;
+  }
+
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    30% {
+      background-color: rgba(141, 238, 233, 0.1);
+    }
+
+    60% {
+      background-color: rgba(174, 210, 243, 0.2);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/*===========================loading(全ページ共通)=============================*/
+.l-loading {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 252, 244);
+
+  z-index:9999;
+  top: 0%;
+  left: 0%;
+  opacity: 0;  //非表示
+  visibility: hidden;  //クリックされないように
+  transition: all 1s;
+
+  .p-loading-circle {
+    position: absolute;
+    /*ここで円のサイズを指定*/
+    width: 30vw;
+    height: 30vw;
+    min-width: 260px;
+    min-height: 260px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+  }
+  h2 {
+    /*font-size1.6rem基準*/
+    font-size:clamp(1.4rem , 4.266vw , 1.8rem);
+    @include pc{
+      font-size: 2.4rem;
+    }
+    animation: load 2s linear infinite;
+    color: #323232;
+  }
+  @keyframes load {
+    50% {
+      opacity: .4;
+      transform: translateY(-4px);
+    }
+
+    80% {
+      opacity: .6;
+    }
+
+    100% {
+    }
+    
+  }
+
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/*===========================/loading(全ページ共通)=============================*/
+
+/*============================header=============================*/
+.l-header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  padding: 1.3vw 2.133vw;
+  top: 0%;
+  }
+  .p-header__logo {
+  position: fixed;
+  width: 60px;
+  left: 2.33vw;
+  z-index: 9999;
+  @include tb{
+    width: 76px;
+  }
+  @include pc{
+    position: static;
+    width: 80px;
+  }
+  }
+  /*~~~~~~~~~~~~~~~~~~~~~~ハンバーガーボタン~~~~~~~~~~~~~~~~~~~~~~*/
+  .l-hamubtn {
+  display: block;
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  z-index: 9999;
+  right: 2.33vw;
+  @include tb{
+    width: 72px;
+    height: 72px;
+  }
+  @include pc{    
+    top: 7%;
+    width: 88px;
+    height: 88px;
+  }
+  
+    span {
+      display: block;
+      background-color: #323232;
+      border-radius: 4px;
+      width: 80%;
+      height: 2px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: .5s;
+      @include pc{
+        width: 60%;
+      }
+      &:nth-of-type(1) {
+        top: 20%;
+        @include pc{
+          top: 30%;
+        }
+      }
+      &:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50% , -50%);
+      }
+      &:nth-of-type(3) {
+        bottom: 20%;
+        @include pc{
+          bottom: 30%;
+        }
+      }
+    }
+  }
+  /* l-hamubtnをクリックした時の指定(×になるための指定) */
+  .l-hamubtn.active span{
+    &:nth-of-type(1) {
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%)
+      rotate(45deg);
+      transition: .4s;
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+      transition: .1;
+    }
+    &:nth-of-type(3) {
+      top: 50%;
+      left: 50%;
+      transform:translateX(-50%) translateY(-50%) rotate(-45deg);
+      transition: .4s;
+    }
+  }
+  /*~~~~~~~~~~~~~~~~~~~~~~/ハンバーガーボタン~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~ナブメニュー~~~~~~~~~~~~~~~~~~~~~~*/
+.l-nav {
+position: fixed;
+width: 100vw;
+height: 100vh;
+
+top: 0%;
+left: 0%;
+transition: ease .8s;
+z-index: 999;
+opacity: 0;
+visibility:hidden;
+overflow: auto;
+}
+.l-nav__right {
+margin: 120px auto 0;
+width: 80%;
+
+@include pc{
+  position: absolute;
+  width: 50vw;
+  height: 100%;
+  margin: 0;
+  padding: 1.30vw 5.85vw;
+  top: 0%;
+  right: 0%;
+  transform: translate(-0% ,0%);
+  z-index: -1;
+}
+}
+.c-nav__logo {
+display: none;
+@include pc{
+display: block;
+position: static;
+width: 80px;
+transform: translateX(0%);
+}
+}
+/*ナブメニューリスト*/
+.c-nav__list {
+@include pc {
+  padding:11.45% 0 7.812% ;
+}
+  .c-nav__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px #707070 solid;
+
+    .c-nav__link {
+      display: block;
+      padding: 24px 0%;
+      @include pc{
+        padding: 5% 0;
+      }
+  }
+}
+}
+.c-nav__sns {
+display: flex;
+.c-nav__sns-link {
+  width: clamp(40px , 11.2vw , 60px);
+  margin-top: 42px;
+  margin-right:7.02% ;
+
+  @include pc {
+    width: 9.2%;
+    margin-top: 0%;
+  }
+}
+}
+.c-nav__item:nth-of-type(1) {
+  border-top:1px #707070 solid;
+}
+:nth-of-type(2) {
+margin: 0;
+}
+
+.c-nav__item a:hover {
+color:#fff;
+}
+.c-nav__item a::before {
+content: "";
+position: absolute;
+width: 0%;
+height: 100%;
+top: 0%;
+z-index: -1;
+transition: all .4s;
+}
+.c-nav__item a:hover::before {
+left: 0%;
+width: 100%;
+background-color: #9FD1FF;
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~ここまでナブメニュー~~~~~~~~~~~~~~~~~~~~~~*/
+.panelactive {
+  opacity: 1;
+  visibility: visible;
+  // hamubtnがクリックされたら、navに(.panelactive)がつく
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0%;
+  transition: ease .4s;
+}
+/*============================/header=============================*/
+
+/*============================body全体レイアウト(全ページ)=============================*/
+.l-warp {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4.226%;
+}
+/*============================パーツ共通(全ページ)=============================*/
+.c-button {
+  .c-button__inner {
+    position: relative;
+    display: inline-block;
+    border: #707070 1px solid;
+    border-radius: 6px;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 30px;
+
+    width: 0.4em;
+    height: 0.4em;
+    border-top: 0.5px solid rgb(0, 0, 0);
+    border-right: 0.5px solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+    margin-top: -5px;
+  }
+}
+
+.p-works__link-btn {
+  a {
+    padding:  5% 36%;
+    @include tb {
+      padding: 5% 40%;
+    }
+
+  }
+}
+.p-contact__link-btn {
+  a {
+    padding: 4% 20%;
+    @include pc{
+      padding: 2% 16%;
+    }
+  }
+}
+.l-section__contants {
+  margin: 0 auto;
+  @include pc{
+    width: 87.84vw;
+    margin: 0 auto;
+  }
+}
+
+
+.c-button__inner:hover {
+  border-color: rgb(159, 209, 255);
+  color:#fff;
+  transition: all .3s;
+}
+.c-button__inner::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  transition: all .3s;
+}
+.c-button__inner:hover::after {
+  width: 100%;
+  background-color: rgb(159, 209, 255);
+  transition: all .4s;
+
+}
+.c-button__inner:hover:before {
+  border-color:#fff ;
+}
+
+/*============================/パーツ共通(全ページ)=============================*/
+
+
+/*============================section(共通)=============================*/
+.l-section__contents {
+  margin-bottom: 32vw;
+  @include pc{
+    margin-bottom: 11.16vw;
+  }
+}
+/*============================/section(共通)=============================*/
+
+
+/*============================mv=============================*/
+#mv {
+  height: 117.33vw;
+  @include pc {
+    height: 35.23vw;
+  }
+    .p-mv__item {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .p-mv__item-text {
+            position: absolute;
+            display: block;
+
+            z-index: 2;
+            top: 50%;
+            left: 49.5%;
+            transform: translate(-50% ,-50%);
+        }
+        .p-mv__item-circle{
+            content: '';
+            position: absolute;
+            /*各要素の親で円のサイズを指定する*/
+            height: 53.33vw;
+            width: 53.33vw;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+
+            @include pc {
+              width: 26.35vw;
+              height: 26.35vw;
+            }
+          }
+    }
+}
+/*============================/mv=============================*/
+
+
+/*============================works=============================*/
+#works {
+  margin: 0 auto;
+  text-align: center;
+
+  .p-works__item {
+    position: relative;
+    margin-bottom: 32vw;
+
+    @include pc {
+      display: flex;
+      justify-content: center;
+      max-width: 1366px;
+      margin: 0 auto 11.71vw;
+    }
+
+    .p-works__item-inner-01 {
+      margin-bottom: 4.266vw;
+      @include pc {
+        width: 65%;
+        margin: 0%;
+      }
+    }
+
+    .p-works__item-inner-02 {
+
+      @include pc{
+        width: 36%;
+        margin-left: 10% ;
+        padding:0 4% 0 0;
+      }
+
+      .p-works__item-text {
+        margin-bottom: 14.4vw;    
+
+        @include pc{
+          margin-bottom: 4.392vw;
+        }
+
+        .p-works__text-01 {
+          margin-bottom:6.4vw ;
+
+          @include pc{
+            margin-bottom: 3.22vw;
+          }
+        }/*p-works__text-01*/
+
+        .p-works__text-02 {
+          text-align: start;
+
+
+          .p-works__genre-title {
+            display: inline-block;
+            margin-bottom: clamp(8px , 3.2vw , 16px) ;
+
+            @include pc{
+              margin: 0;
+            }
+          }
+
+          .p-genre__line {
+            display: block;
+            content: "";
+            background-color: rgb(50, 50, 50, 0.6);
+            width: 10vw;
+            height: 2px;
+            margin-bottom:clamp(8px , 3.2vw , 16px) ;
+            @include pc{
+              display: none;
+            }
+          }
+
+          .p-works__genre-text {
+
+            @include pc{
+              display: block;
+              padding: 16px;
+            }
+          }
+        }/*p-works__text-02*/
+      }
+    }/*p-works__item-inner-02*/
+
+    .p-line {
+      content: "";
+      position: absolute;
+      background-color:rgb(50, 50, 50, 0.6);
+      right: 10%;
+      z-index: -1;
+      @include pc{
+        top:56px;
+        right: 0%;
+        z-index: -1;
+      }
+    }
+  }/*p-works__item*/
+
+  .p-item__right {
+
+    @include pc{
+      .p-line {
+        left: 0%;
+      }
+
+      .p-works__item-inner-01 {
+        order: 2;
+        margin-left: 10%;
+      }
+  
+      .p-works__item-inner-02 {
+        order: 1;
+        margin: 0%;
+        padding:0 0 0 4%;
+      }
+    }
+  }
+}
+
+/*============================/works=============================*/
+
+
+/*============================footer=============================*/
+
+#footer {
+  position: relative;
+  text-align: center;
+  background-color: #000000;
+  padding: 26.6vw 0 6.4vw;
+
+  @include pc{
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    margin: 0 auto;
+
+  }
+
+  .c-footer__endtext {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 4%;
+  }
+}
+/*============================/footer=============================*/
+
+/*============================背景、画像=============================*/
+.t-body {
+  background-color: rgb(255, 252, 244);
+}
+body::before {
+      content: "";
+      position: fixed;
+      display: block;
+      background-image: url(../img/background__line.png);
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100vh;
+  
+      top: 0%;
+      left: 0%;
+      z-index: -1;
+}
+.l-nav {
+  background-color: #fff;
+  @include pc{
+    background-color: hsla(0, 0%, 0%, 0.85);
+  }
+  
+  .l-nav__right {
+      background-color: #fff;
+  }
+}
+/*============================ここまで背景、画像=============================*/
+/*============================フォントサイズ　フォントファミリー=============================*/
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Martel:wght@200;300&family=Noto+Serif+JP:wght@200;300;500&display=swap');
+
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(全ページ)~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+  font-family:'Martel',  'Noto Serif JP',  serif;
+    
+
+  p{
+    color: rgb(50, 50, 50);
+    font-family: 'Noto Serif JP';
+    /*fontsize (1.5rem基準)*/
+    font-size: clamp(1.5rem , 4vw , 1.8rem);
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: clamp(0.4rem , 0.3vw , 1.2rem);
+    @include tb{
+        /*fontsize (1.8rem基準)*/
+      font-size: clamp(1.6rem , 2.34vw , 2.2rem );
+    }
+    @include pc{
+        /*fontsize (1.6rem基準)*/
+      font-size: clamp(1.6rem , 1.171vw ,1.8rem );
+    }
+  }
+  .c-nav__link {
+    font-size: clamp(2.4rem , 6.933vw , 2.6rem);
+    height: 100%;
+    width: 100%;
+    @include pc{
+      font-size: 1.9vw;
+      padding: 2.34vw 0;
+    }
+  }
+  .c-button {
+    a {
+      font-size: clamp(1.6rem , 3.2vw , 2.4rem);
+      font-weight: 200;
+      letter-spacing: clamp(1rem , 0.4vw , 1.2rem);
+      @include pc{
+        font-size: clamp(1.6rem , 1.171vw ,2.4rem );
+      }
+    }
+  }
+  /*footer*/
+  #footer {
+    p {
+        /*fontsize (1.4rem基準)*/
+      font-size: 1.4rem;
+      font-family: 'sans-serif';
+      color: #fff;
+    }
+  }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~font-size(各ページ)~~~~~~~~~~~~~~~~~~~~~~*/
+body {
+    /*mv*/
+  .p-mv__item-text{
+    font-family: 'Italianno', cursive;
+    /*fontsize (10rem基準)*/
+    font-size: 26.66vw;
+    @include tb{
+      font-size: 38.4vw;
+    }
+    @include pc {
+      /*fontsize (12rem基準)*/
+      font-size: 11.71vw;
+    }
+  }
+    /*ここまでmv*/
+    /*works*/
+  .p-works__text-01 {
+    font-size:clamp( 2rem , 8.533vw , 3.8rem);
+    font-weight: 300;
+
+    @include pc{
+      font-size: clamp( 3.2rem , 2.34vw , 3.6rem);
+    }
+  }
+  .p-works__text-02 {
+    .p-works__genre-title {
+      font-size: clamp( 2rem , 5.33vw , 2.6rem);
+      @include pc{
+        font-size: clamp( 2.2rem ,1.756vw , 2.4rem);
+      }
+    }
+    .p-works__genre-text {
+      font-size: clamp(1.4rem , 3.733vw , 2rem ) ;
+      @include pc{
+        font-size: clamp(1.6rem , 1.171vw , 1.8rem);
+      }
+    }
+  }
+}
+
+/*============================js=============================*/
+.js-clear {
+  opacity: 0;
+}
+.js-scroll__clear {
+  opacity: 1;
+  transition: all 1s;
+}
+
+.js-fadein {
+  opacity: 0;
+
+}
+.top {
+  transform: translate(0px , -10px);
+  transition: transform 1.5s ease-out, opacity 1s ,;
+}
+.right {
+  transform: translate(14px , 0px);
+  transition: transform 1.5s ease-out, opacity 1s ,;
+}
+.left {
+  transform: translate(-14px , 0px);
+  transition: transform 1.5s ease-out, opacity 1s ,;
+}
+.js-scroll__fadein {
+  opacity: 1;
+  transform: translate(0,0);
+}
+.js-line {
+  @include pc{
+    width: 0%;
+    height: 2px;
+  }
+  transition: all 1.8s;
+}
+.js-scroll__line {
+  @include pc {
+    width: 70%;
+    height: 2px;
+  }
+}
+/*============================/js=============================*/
