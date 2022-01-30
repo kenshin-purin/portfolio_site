@@ -200,8 +200,8 @@ body .warp {
 /*~~~~~~~~~~~~~~~~~~~~~~ハンバーガーボタン~~~~~~~~~~~~~~~~~~~~~~*/
 .l-hamubtn {
   display: block;
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   z-index: 9999;
   right: 2.33vw;
@@ -396,6 +396,7 @@ body .warp {
 }
 
 /*============================/header=============================*/
+/*============================/header=============================*/
 /*============================body全体レイアウト(全ページ)=============================*/
 .l-warp {
   max-width: 1600px;
@@ -404,85 +405,7 @@ body .warp {
 }
 
 /*============================パーツ共通(全ページ)=============================*/
-.c-button .c-button__inner {
-  position: relative;
-  display: inline-block;
-  border: #707070 1px solid;
-  border-radius: 6px;
-}
-.c-button :before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 30px;
-  width: 0.4em;
-  height: 0.4em;
-  border-top: 0.5px solid black;
-  border-right: 0.5px solid black;
-  transform: rotate(45deg);
-  margin-top: -5px;
-}
-
-.p-works__link-btn a {
-  padding: 5% 36%;
-}
-@media only screen and (min-width: 600px) {
-  .p-works__link-btn a {
-    padding: 5% 40%;
-  }
-}
-
-.p-contact__link-btn a {
-  padding: 4% 20%;
-}
-@media only screen and (min-width: 1025px) {
-  .p-contact__link-btn a {
-    padding: 2% 16%;
-  }
-}
-
-.l-section__contants {
-  margin: 0 auto;
-}
-@media only screen and (min-width: 1025px) {
-  .l-section__contants {
-    width: 87.84vw;
-    margin: 0 auto;
-  }
-}
-
-.c-button__inner:hover {
-  border-color: #9fd1ff;
-  color: #fff;
-  transition: all 0.3s;
-}
-
-.c-button__inner::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
-  transition: all 0.3s;
-}
-
-.c-button__inner:hover::after {
-  width: 100%;
-  background-color: #9fd1ff;
-  transition: all 0.4s;
-}
-
-.c-button__inner:hover:before {
-  border-color: #fff;
-}
-
-/*============================/パーツ共通(全ページ)=============================*/
 /*============================section(共通)=============================*/
-.l-section__contents {
-  margin-bottom: 32vw;
-}
 @media only screen and (min-width: 1025px) {
   .l-section__contents {
     margin-bottom: 11.16vw;
@@ -492,6 +415,7 @@ body .warp {
 /*============================/section(共通)=============================*/
 /*============================mv=============================*/
 #mv {
+  margin-bottom: 160px;
   height: 117.33vw;
 }
 @media only screen and (min-width: 1025px) {
@@ -531,120 +455,23 @@ body .warp {
 }
 
 /*============================/mv=============================*/
-/*============================works=============================*/
-#works {
-  margin: 0 auto;
-  text-align: center;
-  /*p-works__item*/
-}
-#works .p-works__item {
+/*============================form=============================*/
+.form {
   position: relative;
-  margin-bottom: 32vw;
-  /*p-works__item-inner-02*/
+  width: 80vw;
+  height: 1100px;
+  overflow-y: scroll;
+  margin: 0 auto;
 }
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item {
-    display: flex;
-    justify-content: center;
-    max-width: 1366px;
-    margin: 0 auto 11.71vw;
-  }
-}
-#works .p-works__item .p-works__item-inner-01 {
-  margin-bottom: 4.266vw;
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-01 {
-    width: 65%;
-    margin: 0%;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 {
-    width: 36%;
-    margin-left: 10%;
-    padding: 0 4% 0 0;
-  }
-}
-#works .p-works__item .p-works__item-inner-02 .p-works__item-text {
-  margin-bottom: 14.4vw;
-  /*p-works__text-01*/
-  /*p-works__text-02*/
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 .p-works__item-text {
-    margin-bottom: 4.392vw;
-  }
-}
-#works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-01 {
-  margin-bottom: 6.4vw;
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-01 {
-    margin-bottom: 3.22vw;
-  }
-}
-#works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 {
-  text-align: start;
-}
-#works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 .p-works__genre-title {
-  display: inline-block;
-  margin-bottom: clamp(8px , 3.2vw , 16px);
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 .p-works__genre-title {
-    margin: 0;
-  }
-}
-#works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 .p-genre__line {
-  display: block;
-  content: "";
-  background-color: rgba(50, 50, 50, 0.6);
-  width: 10vw;
-  height: 2px;
-  margin-bottom: clamp(8px , 3.2vw , 16px);
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 .p-genre__line {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-works__item-inner-02 .p-works__item-text .p-works__text-02 .p-works__genre-text {
-    display: block;
-    padding: 16px;
-  }
-}
-#works .p-works__item .p-line {
-  content: "";
+.form iframe {
   position: absolute;
-  background-color: rgba(50, 50, 50, 0.6);
-  right: 10%;
-  z-index: -1;
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-works__item .p-line {
-    top: 56px;
-    right: 0%;
-    z-index: -1;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  #works .p-item__right .p-line {
-    left: 0%;
-  }
-  #works .p-item__right .p-works__item-inner-01 {
-    order: 2;
-    margin-left: 10%;
-  }
-  #works .p-item__right .p-works__item-inner-02 {
-    order: 1;
-    margin: 0%;
-    padding: 0 0 0 4%;
-  }
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/*============================/works=============================*/
+/*============================/form=============================*/
 /*============================footer=============================*/
 #footer {
   position: relative;
@@ -854,4 +681,4 @@ body .p-works__text-02 .p-works__genre-text {
   }
 }
 
-/*============================/js=============================*//*# sourceMappingURL=works.css.map */
+/*============================/js=============================*//*# sourceMappingURL=contact.css.map */

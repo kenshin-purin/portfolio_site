@@ -13,6 +13,7 @@ $media-tb: 600px;
   }
 }
 /*==========ここまでメディアクエリ==========*/
+
 body {
   margin: 0 auto;
   p {
@@ -23,7 +24,6 @@ body {
   padding: 0 2.133vw;
   }
 }
-
 .c-top__btn {
   content: "";
   position: fixed;
@@ -60,8 +60,6 @@ body {
   }
 
 }
-
-
 /*円の共通*/
 .c-circle{
   span {
@@ -85,7 +83,6 @@ body {
     animation-delay: 1s;
     border-radius: 46% 54% 39% 61% / 61% 39% 61% 39% ;
   }
-
   @keyframes circle {
     0% {
       transform: rotate(0deg);
@@ -104,7 +101,6 @@ body {
     }
   }
 }
-
 /*===========================loading(全ページ共通)=============================*/
 .l-loading {
   position: fixed;
@@ -369,313 +365,381 @@ background-color: #9FD1FF;
 
 /*============================body全体レイアウト(全ページ)=============================*/
 .l-warp {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 4.226%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 4.226%;
 }
 /*============================パーツ共通(全ページ)=============================*/
 .c-button {
-  .c-button__inner {
-    position: relative;
-    display: inline-block;
-    border: #707070 1px solid;
-    border-radius: 6px;
-  }
-
-  :before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 30px;
-
-    width: 0.4em;
-    height: 0.4em;
-    border-top: 0.5px solid rgb(0, 0, 0);
-    border-right: 0.5px solid rgb(0, 0, 0);
-    transform: rotate(45deg);
-    margin-top: -5px;
-  }
-}
-
-.p-works__link-btn {
-  a {
-    padding:  5% 36%;
-    @include tb {
-      padding: 5% 40%;
+    .c-button__inner {
+        position: relative;
+        display: inline-block;
+        border: #707070 1px solid;
+        border-radius: 6px;
     }
+    :before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 30px;
 
-  }
-}
-.p-contact__link-btn {
-  a {
-    padding: 4% 20%;
-    @include pc{
-      padding: 2% 16%;
+        width: 0.4em;
+        height: 0.4em;
+        border-top: 0.5px solid rgb(0, 0, 0);
+        border-right: 0.5px solid rgb(0, 0, 0);
+        transform: rotate(45deg);
+        margin-top: -5px;
     }
-  }
 }
 .l-section__contants {
-  margin: 0 auto;
-  @include pc{
-    width: 87.84vw;
     margin: 0 auto;
-  }
+    @include pc{
+        width: 87.84vw;
+        margin: 0 auto;
+    }
 }
-
-
 .c-button__inner:hover {
-  border-color: rgb(159, 209, 255);
-  color:#fff;
-  transition: all .3s;
+    border-color: rgb(159, 209, 255);
+    color:#fff;
+    transition: all .3s;
 }
 .c-button__inner::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  top: 0%;
-  left: 0%;
-  z-index: -1;
-  transition: all .3s;
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    transition: all .3s;
 }
 .c-button__inner:hover::after {
-  width: 100%;
-  background-color: rgb(159, 209, 255);
-  transition: all .4s;
+    width: 100%;
+    background-color: rgb(159, 209, 255);
+    transition: all .4s;
 
 }
 .c-button__inner:hover:before {
-  border-color:#fff ;
+    border-color:#fff ;
 }
-
 /*============================/パーツ共通(全ページ)=============================*/
-
-
-/*============================section(共通)=============================*/
-.l-section__contents {
-  margin-bottom: 32vw;
-  @include pc{
-    margin-bottom: 11.16vw;
-  }
+.c-genre__line {
+    content: "";
+    display: inline-block;
+    background-color: #323232;
 }
-/*============================/section(共通)=============================*/
-
-
-/*============================mv=============================*/
-#mv {
-  height: 117.33vw;
-  @include pc {
-    height: 35.23vw;
-  }
-    .p-mv__item {
-        position: relative;
-        height: 100%;
-        width: 100%;
-
-        .p-mv__item-text {
-            position: absolute;
-            display: block;
-
-            z-index: 2;
-            top: 50%;
-            left: 49.5%;
-            transform: translate(-50% ,-50%);
-        }
-        .p-mv__item-circle{
-            content: '';
-            position: absolute;
-            /*各要素の親で円のサイズを指定する*/
-            height: 53.33vw;
-            width: 53.33vw;
-
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 1;
-
-            @include pc {
-              width: 26.35vw;
-              height: 26.35vw;
-            }
-          }
-    }
+/*============================各ページ=============================*/
+.p-site__title {
+    text-align: center;
+    margin-top: 80px;
 }
-/*============================/mv=============================*/
 
-
-/*============================works=============================*/
-#works {
-  margin: 0 auto;
-  text-align: center;
-
-  .p-works__item {
-    position: relative;
-    margin-bottom: 32vw;
-
-    @include pc {
-      display: flex;
-      justify-content: center;
-      max-width: 1366px;
-      margin: 0 auto 11.71vw;
-    }
-
-    .p-works__item-inner-01 {
-      margin-bottom: 4.266vw;
-      @include pc {
-        width: 65%;
-        margin: 0%;
-      }
-    }
-
-    .p-works__item-inner-02 {
-
-      @include pc{
-        width: 36%;
-        margin-left: 10% ;
-        padding:0 4% 0 0;
-      }
-
-      .p-works__item-text {
-        margin-bottom: 14.4vw;    
-
+.c-button {
+    .c-button__inner {
         @include pc{
-          margin-bottom: 4.392vw;
+            width: 70%;
         }
-
-        .p-works__text-01 {
-          margin-bottom:6.4vw ;
-
-          @include pc{
-            margin-bottom: 3.22vw;
-          }
-        }/*p-works__text-01*/
-
-        .p-works__text-02 {
-          text-align: start;
-
-
-          .p-works__genre-title {
-            display: inline-block;
-            margin-bottom: clamp(8px , 3.2vw , 16px) ;
-
-            @include pc{
-              margin: 0;
-            }
-          }
-
-          .p-genre__line {
-            display: block;
-            content: "";
-            background-color: rgb(50, 50, 50, 0.6);
-            width: 10vw;
-            height: 2px;
-            margin-bottom:clamp(8px , 3.2vw , 16px) ;
-            @include pc{
-              display: none;
-            }
-          }
-
-          .p-works__genre-text {
-
-            @include pc{
-              display: block;
-              padding: 16px;
-            }
-          }
-        }/*p-works__text-02*/
-      }
-    }/*p-works__item-inner-02*/
-
-    .p-line {
-      content: "";
-      position: absolute;
-      background-color:rgb(50, 50, 50, 0.6);
-      right: 10%;
-      z-index: -1;
-      @include pc{
-        top:56px;
-        right: 0%;
-        z-index: -1;
-      }
     }
-  }/*p-works__item*/
+}
+.p-mv__img {
+  margin-top: 42px;
+  @include pc{
+    margin-top: 5.85vw;
+    width: 100%;
+  }
+  img {
+    border-radius: 14px;
+    box-shadow: 10px 10px 15px -10px;
+  }
+}
 
-  .p-item__right {
+.p-more__link-btn {
+    text-align: center;
+    margin-top: 100px;
+    @include pc{
+        margin-top: 5.27vw;
+    }
+    a {
+        padding: 4% 20%;
+        @include pc{
+            padding: 2% 16%;
+        }
+    }
+}
+
+/*~~~~~~~~~~ここからl-text__warp~~~~~~~~~~*/
+.l-text__wrap {
+    max-width: 1000px;
+    margin: 32px  auto 0;
+    
 
     @include pc{
-      .p-line {
-        left: 0%;
-      }
-
-      .p-works__item-inner-01 {
-        order: 2;
-        margin-left: 10%;
-      }
-  
-      .p-works__item-inner-02 {
-        order: 1;
-        margin: 0%;
-        padding:0 0 0 4%;
-      }
+        width:  80vw;
+        margin: 0 auto;
     }
-  }
+    .p-site__comment {
+        @include pc{
+            margin-top: 2.48vw;
+        }
+    }
+
+    .p-text__item-warp {
+        margin-top: 5.27vw;
+        @include pc{
+            justify-content: space-between;
+        }
+
+        .p-text__item-01 {
+            .p-genre__list {
+                .p-genre__list-item {
+                    margin-top: 60px;
+                    .p-genre__title {
+                        margin-top: 16px;
+                    }
+                    .p-genre__list-item-box {
+                        display: flex;
+                        margin-top: 16px;
+                        .c-genre__line {
+                            padding: 1px;
+                            height: 20px;
+                        }
+                        .p-text__item-01-text {
+                            padding-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .p-text__item-02 {
+            margin-top: 120px;
+            position: relative;
+            z-index: 1;
+            @include pc{
+                order: 2;
+                width: 60%;
+                max-width: 700px;
+                height: 100%;
+            }
+            
+            ::before {
+                @include tb{
+                    top: 10px;
+                    left: 0%;
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    z-index: -1;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #fff;
+                padding: 16px 8px;
+                @include tb{
+                    background-color:transparent;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding:0 ;
+                }
+                li {
+                    width: 50%;
+                    min-width: 160px;
+                    margin-bottom: 32px;
+                    padding:0 8px ;
+                    @include tb {
+                        min-width:auto;
+                        width: auto;
+                        display: inline-block;
+                        padding: 0 10px;
+                        margin: 0 auto;
+                    }
+                    .p-text__item-box {
+                        margin-top: 16px;
+                        display: flex;
+                        @include tb {
+                            flex-flow: column;
+                            margin-top: 0px;
+                        }
+                        .c-genre__line {
+                            height: 20px;
+                            padding: 1px;
+                            @include tb{
+                                margin: 4px 2px;
+                                width: 20px;
+                                height: 2px;
+                            }
+                        }
+                        .p-text__item-02-text {
+                            padding: 0 8px;
+                        }
+
+                    }
+                    &:nth-of-type(4) {
+                        margin: 0;
+                    }
+                }
+
+            }
+        }/*p-text__item-02*/
+
+    }
+    
+}
+/*~~~~~~~~~~~~~~~~~~~~~~ここまでl-text__warp~~~~~~~~~~~~~~~~~~~~~~*/
+.c-button a {
+    width: 90%;
+
 }
 
-/*============================/works=============================*/
+/*~~~~~~~~~~~~~~~~~~~~~~ここからl-img~~~~~~~~~~~~~~~~~~~~~~*/
+.l-img {
+    padding-top:120px;
+    @include pc {
+        padding-top: 84px;
+    }
 
+    /*~~~~~~~~~~p-img__sp~~~~~~~~~~*/
+    .p-img__sp {
+        margin: 0 auto;
+        @include tb {
+            display: flex;
+            justify-content: space-around;
+        }
+        @include pc{
+            width: 56%;
+        }
 
+        /*sp-item(共通)*/
+        .p-img__sp-item {
+            margin: 0 auto;
+            width: 70%;
+            @include tb{
+                width: 40%;
+            }
+        }
+        /*ここまでsp-item(共通)*/
+        .sp-item-01 {
+            margin-bottom: 48px;
+        }
+    }
+
+    /*~~~~~~~~~~p-img-pc~~~~~~~~~~*/
+    .p-img__pc {
+        position: relative;
+        padding: 160px 0 220px ;
+        margin:  0 auto;
+        .pc-item-01 {
+            position: relative;
+            @include tb{
+                width: 93%;
+                margin: 0 auto;
+            }
+            @include pc{
+                width: 70%;
+            }
+
+            .pc-item__moc {
+                display: none;
+                @include tb{
+                    display: block;
+                }
+            }
+    
+            .pc-comp {
+                display: block;
+                @include tb{
+                    position: absolute;
+                    overflow: scroll;
+                    overflow-x:hidden;
+                    width: 92%;
+                    height: 64%;
+    
+                    top: 5%;
+                    left: 50%;
+                    transform: translateX(-50.5%);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }/*pc-item-01*/
+
+        .pc-item-02 {
+            display:  none;
+            @include tb{
+                display: block;
+                position: absolute;
+                right: 0%;
+                top: 30%;
+                width: 4.5%;
+
+            }
+            @include pc{
+                right: 10%;
+                top: 28%;
+                width: 3%;
+            }
+        }/*pc-item-02*/
+    }
+
+}
+/*~~~~~~~~~~~~~~~~~~~~~~ここまでl-img~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*============================/各ページ=============================*/
 /*============================footer=============================*/
 
 #footer {
-  position: relative;
-  text-align: center;
-  background-color: #000000;
-  padding: 26.6vw 0 6.4vw;
-
-  @include pc{
-    width: 100%;
-    height: 120px;
-    padding: 0;
-    margin: 0 auto;
-
-  }
-
-  .c-footer__endtext {
-    position: absolute;
+    position: relative;
     text-align: center;
-    width: 100%;
-    bottom: 4%;
-  }
-}
-/*============================/footer=============================*/
+    background-color: #000000;
+    padding: 26.6vw 0 6.4vw;
+    @include pc{
+        width: 100%;
+        height: 120px;
+        padding: 0 0 80px;
+        margin: 0 auto;
+    }
 
+    .c-footer__endtext {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        bottom: 4%;
+    }
+  }
+  /*============================/footer=============================*/
 /*============================背景、画像=============================*/
 .t-body {
-  background-color: rgb(255, 252, 244);
+    background-color: #FFFCF4;
 }
 body::before {
-      content: "";
-      position: fixed;
-      display: block;
-      background-image: url(../img/background__line.png);
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      height: 100vh;
-  
-      top: 0%;
-      left: 0%;
-      z-index: -1;
+        content: "";
+        position: fixed;
+        display: block;
+        background-image: url(../img/background__line.png);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        top: 0%;
+        left: 0%;
+        z-index: -1;
 }
 .l-nav {
-  background-color: #fff;
-  @include pc{
-    background-color: hsla(0, 0%, 0%, 0.85);
-  }
-  
-  .l-nav__right {
-      background-color: #fff;
-  }
+    background-color: #fff;
+    @include pc{
+        background-color: hsla(0, 0%, 0%, 0.85);
+    }
+    
+    .l-nav__right {
+        background-color: #fff;
+    }
 }
 /*============================ここまで背景、画像=============================*/
 /*============================フォントサイズ　フォントファミリー=============================*/
@@ -684,8 +748,6 @@ body::before {
 /*~~~~~~~~~~~~~~~~~~~~~~font-size(全ページ)~~~~~~~~~~~~~~~~~~~~~~*/
 body {
   font-family:'Martel',  'Noto Serif JP',  serif;
-    
-
   p{
     color: rgb(50, 50, 50);
     font-family: 'Noto Serif JP';
@@ -703,6 +765,8 @@ body {
       font-size: clamp(1.6rem , 1.171vw ,1.8rem );
     }
   }
+
+  /*-----button-----*/
   .c-nav__link {
     font-size: clamp(2.4rem , 6.933vw , 2.6rem);
     height: 100%;
@@ -722,7 +786,8 @@ body {
       }
     }
   }
-  /*footer*/
+  /*-----/button-----*/
+  /*-----footer-----*/
   #footer {
     p {
         /*fontsize (1.4rem基準)*/
@@ -734,85 +799,36 @@ body {
 }
 /*~~~~~~~~~~~~~~~~~~~~~~font-size(各ページ)~~~~~~~~~~~~~~~~~~~~~~*/
 body {
-    /*mv*/
-  .p-mv__item-text{
-    font-family: 'Italianno', cursive;
-    /*fontsize (10rem基準)*/
-    font-size: 26.66vw;
-    @include tb{
-      font-size: 38.4vw;
-    }
-    @include pc {
-      /*fontsize (12rem基準)*/
-      font-size: 11.71vw;
+  .p-site__title {
+    h2 {
+      /*font-size (2.2rem基準)*/
+      font-size: clamp(1.8rem , 5.86vw , 2.6rem);
+      letter-spacing: 2px;
+      width: 100%;
+      @include tb{
+        letter-spacing: 4px;
+        font-size: clamp(3.2rem , 44.719vw , 3.6rem);
+      }
+      @include pc{
+        font-size: clamp(3rem , 2.34vw , 3.6rem);
+      }
     }
   }
-    /*ここまでmv*/
-    /*works*/
-  .p-works__text-01 {
-    font-size:clamp( 2rem , 8.533vw , 3.8rem);
-    font-weight: 300;
-
+  .p-site__comment {
+    /*font-size (1.6rem基準)*/
+    font-size: clamp(1.6rem , 4.266vw , 2rem);
     @include pc{
-      font-size: clamp( 3.2rem , 2.34vw , 3.6rem);
+      /*font-size (2rem基準)*/
+      font-size: clamp(1.8rem , 1.46vw , 2.4rem );
     }
   }
-  .p-works__text-02 {
-    .p-works__genre-title {
-      font-size: clamp( 2rem , 5.33vw , 2.6rem);
-      @include pc{
-        font-size: clamp( 2.2rem ,1.756vw , 2.4rem);
-      }
-    }
-    .p-works__genre-text {
-      font-size: clamp(1.4rem , 3.733vw , 2rem ) ;
-      @include pc{
-        font-size: clamp(1.6rem , 1.171vw , 1.8rem);
-      }
-    }
+  .p-genre__title {
+    /*font-size (1.5rem基準)*/
+    font-size: clamp(1.4rem , 4vw , 1.8rem);
+    font-weight: 400;
+  }
+  .p-text__item-02-text p {
+    letter-spacing: 4px;
   }
 }
-
-/*============================js=============================*/
-.js-clear {
-  opacity: 0;
-}
-.js-scroll__clear {
-  opacity: 1;
-  transition: all 1s;
-}
-
-.js-fadein {
-  opacity: 0;
-
-}
-.top {
-  transform: translate(0px , -10px);
-  transition: transform 1.5s ease-out, opacity 1s ,;
-}
-.right {
-  transform: translate(14px , 0px);
-  transition: transform 1.5s ease-out, opacity 1s ,;
-}
-.left {
-  transform: translate(-14px , 0px);
-  transition: transform 1.5s ease-out, opacity 1s ,;
-}
-.js-scroll__fadein {
-  opacity: 1;
-  transform: translate(0,0);
-}
-.js-line {
-  @include pc{
-    width: 0%;
-    height: 2px;
-  }
-  transition: all 1.8s;
-}
-.js-scroll__line {
-  @include pc {
-    width: 70%;
-    height: 2px;
-  }
-}
-/*============================/js=============================*/
+/*============================/フォントサイズ　フォントファミリー=============================*/

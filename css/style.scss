@@ -1099,8 +1099,8 @@ body {
   p{
     color: rgb(50, 50, 50);
     font-family: 'Noto Serif JP';
-    /*fontsize (1.4rem基準)*/
-    font-size: clamp(1.4rem , 3.733vw , 1.8rem);
+    /*fontsize (1.5rem基準)*/
+    font-size: clamp(1.5rem , 4vw , 1.8rem);
     font-weight: 300;
     line-height: 2;
     letter-spacing: clamp(0.4rem , 0.3vw , 1.2rem);
