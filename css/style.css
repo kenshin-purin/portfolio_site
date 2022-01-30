@@ -497,10 +497,15 @@ body .warp {
   transform: translate(-50%, -50%);
 }
 
-/*-----section__title-----*/
+/*-----section__title(about)-----*/
 #about .section__title-inner {
-  padding: 0 3% 0 4%;
+  padding: 0 4% 0 0%;
   margin-right: 4%;
+}
+@media only screen and (min-width: 600px) {
+  #about .section__title-inner {
+    padding: 0 3% 0 4%;
+  }
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~/section__title~~~~~~~~~~~~~~~~~~~~~~*/

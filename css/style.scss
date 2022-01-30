@@ -451,11 +451,14 @@ background-color: #9FD1FF;
     transform: translate(-50%,-50%);
   }
 
-  /*-----section__title-----*/
+  /*-----section__title(about)-----*/
   #about {
     .section__title-inner {
-      padding: 0 3% 0 4%;
+      padding: 0 4% 0 0%;
       margin-right: 4%;
+      @include tb{
+        padding: 0 3% 0 4%;
+      }
     }
   }
 /*~~~~~~~~~~~~~~~~~~~~~~/section__title~~~~~~~~~~~~~~~~~~~~~~*/
